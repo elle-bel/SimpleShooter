@@ -1,49 +1,37 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PersonBehaviour : MonoBehaviour
 {
-    public bool goesForward = true;
     public float personSpeed = 2;
 
-    private bool forward = true;
     private float distanceTravelled = 0;
     private float maxDistance = 2.0f;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    private float travelled;
+    
+    float getMovementAmount(Vector3 initPosition, Vector3 newPosition){
+        return (float)Math.Sqrt(Math.Pow(newPosition.x - initPosition.x, 2) + Math.Pow(newPosition.z - initPosition.z, 2));
     }
 
-    // need to change this so it always moves "forward" in "direction its facing"
+    void moveForward(){
+        var initPos = transform.position;
+        transform.Translate(Vector3.forward * Time.deltaTime * personSpeed);
+        travelled = getMovementAmount(initPos, transform.position);
+        distanceTravelled += travelled;
+    }
+
+    // need to smooth out rotations
     void Update()
     {
-        if (forward){
-            if (goesForward) {
-                transform.Translate(Vector3.right * Time.deltaTime * personSpeed);
-                distanceTravelled += (Vector3.right * Time.deltaTime * personSpeed).x;
-            } else {
-                transform.Translate(Vector3.left * Time.deltaTime * personSpeed);
-                distanceTravelled += (Vector3.left * Time.deltaTime * personSpeed).x * -1;
-            }
-            
-            if (distanceTravelled > maxDistance){
-                forward = false;
-                distanceTravelled = 0;
-            }
-        } else {
-            if (goesForward) {
-                transform.Translate(Vector3.left * Time.deltaTime * personSpeed);
-                distanceTravelled += (Vector3.left * Time.deltaTime * personSpeed).x * -1;
-            } else {
-                transform.Translate(Vector3.right * Time.deltaTime * personSpeed);
-                distanceTravelled += (Vector3.right * Time.deltaTime * personSpeed).x;
-            }
-            if (distanceTravelled > maxDistance){
-                forward = true;
-                distanceTravelled = 0;
-            }
+        moveForward();
+        if (travelled == 0){
+            transform.Rotate(new Vector3(0, 180,0));
         }
+        if (distanceTravelled > maxDistance){
+            distanceTravelled = 0;
+            transform.Rotate(new Vector3(0, UnityEngine.Random.Range(0,180),0));
+        } 
     }
 }
