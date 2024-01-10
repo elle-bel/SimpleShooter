@@ -7,13 +7,16 @@ This project is for me to work more with Unity to develop a game which, as the t
   - Scoring system
   - Crosshair
   - Rules & How-to-play
-- [ ] Make Person entities turn and move in a random direction
+- [x] Make Person entities turn and move in a random direction
   - Also maybe fixes the collision issues right now
-- [ ] [**IN PROGRESS**] Create Blender meshes of the Person entities & create materials for each version in Blender
+- [x] Create Blender meshes of the Person entities & create materials for each version in Blender
 - [ ] Bullets are destroyed ~0.5s after hitting a Person (allow for collats)
-- [ ] Cap on amount of Person entities allowed in Scene at one time 
+- [ ] Cap on amount of Person entities allowed in Scene at one time
+- [ ] [**IN PROGRESS**] Make person rotation smoother
+- [ ] Update the Spawner script by creating new prefabs for the Persons so the Spawner spawns those instead of the old ones
 
 #### Possible Improvements ####
 These improvements are under consideration / not a top priority
 - [ ] Sound effects
 - [ ] Ensure that Person entities don't collide at all
+- [ ] Visual update on Person models
