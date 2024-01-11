@@ -14,6 +14,7 @@ This project is for me to work more with Unity to develop a game which, as the t
 - [ ] Cap on amount of Person entities allowed in Scene at one time
 - [ ] [**IN PROGRESS**] Make person rotation smoother
 - [ ] Update the Spawner script by creating new prefabs for the Persons so the Spawner spawns those instead of the old ones
+- [ ] Make distance travelled by persons random so not all moving + rotating at the same time
 
 #### Possible Improvements ####
 These improvements are under consideration / not a top priority
