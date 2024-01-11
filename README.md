@@ -11,9 +11,9 @@ This project is for me to work more with Unity to develop a game which, as the t
   - Also maybe fixes the collision issues right now
 - [x] Create Blender meshes of the Person entities & create materials for each version in Blender
 - [ ] Bullets are destroyed ~0.5s after hitting a Person (allow for collats)
-- [ ] Cap on amount of Person entities allowed in Scene at one time
-- [ ] [**IN PROGRESS**] Make person rotation smoother
-- [ ] Update the Spawner script by creating new prefabs for the Persons so the Spawner spawns those instead of the old ones
+- [x] Cap on amount of Person entities allowed in Scene at one time
+- [x] Make person rotation smoother
+- [ ] [**IN PROGRESS**] Update the Spawner script by creating new prefabs for the Persons so the Spawner spawns those instead of the old ones
 - [ ] Make distance travelled by persons random so not all moving + rotating at the same time
 
 #### Possible Improvements ####
