@@ -21,3 +21,4 @@ These improvements are under consideration / not a top priority
 - [ ] Sound effects
 - [ ] Ensure that Person entities don't collide at all
 - [ ] Visual update on Person models
+- [ ] Player gets hurt upon collision with Enemy persons => may need to switch camera for this?
