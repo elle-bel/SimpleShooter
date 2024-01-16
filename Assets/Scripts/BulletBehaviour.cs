@@ -38,7 +38,6 @@ public class BulletBehaviour : MonoBehaviour
 
         if (other.gameObject.CompareTag("Person") && canDestroy)
         {
-            // if a trigger than use parent...?
             Destroy(other.transform.gameObject);
         }   
     }

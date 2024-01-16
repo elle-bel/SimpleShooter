@@ -6,7 +6,8 @@ using UnityEngine.Assertions;
 
 public class PersonSpawners : MonoBehaviour
 {
-    public GameObject person;
+    public GameObject enemy;
+    public GameObject civillian;
     public GameObject gameFloor;
 
     // civillianRate representing a percentage of how many enemies spawned are civillians
@@ -85,12 +86,11 @@ public class PersonSpawners : MonoBehaviour
     public void SpawnPerson(){
         if (UnityEngine.Random.Range(1,100) < civillianRate+1){
             // spawn civillian           
-            var newPerson = Instantiate(person, new Vector3(spawnPoint.x, spawnY, spawnPoint.z), Quaternion.identity);
-            newPerson.GetComponent<RenderPerson>().IsEnemy = false;
+            var newPerson = Instantiate(civillian, new Vector3(spawnPoint.x, spawnY, spawnPoint.z), Quaternion.identity);
             newPerson.GetComponent<PersonBehaviour>().PersonDestroyed += DecreasePersonCount;
         } else {
             // spawn enemy
-            var newPerson = Instantiate(person, new Vector3(spawnPoint.x, spawnY, spawnPoint.z), Quaternion.identity);
+            var newPerson = Instantiate(enemy, new Vector3(spawnPoint.x, spawnY, spawnPoint.z), Quaternion.identity);
             newPerson.GetComponent<PersonBehaviour>().PersonDestroyed += DecreasePersonCount;
         }
     }

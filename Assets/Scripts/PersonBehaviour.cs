@@ -17,6 +17,10 @@ public class PersonBehaviour : MonoBehaviour
     private float rotationGoal;
     private float amountRotated;
     
+    private void Start() {
+        maxDistance = UnityEngine.Random.Range(0.25f,7.0f);
+    }
+
     float getMovementAmount(Vector3 initPosition, Vector3 newPosition){
         return (float)Math.Sqrt(Math.Pow(newPosition.x - initPosition.x, 2) + Math.Pow(newPosition.z - initPosition.z, 2));
     }
@@ -36,6 +40,7 @@ public class PersonBehaviour : MonoBehaviour
             amountRotated += (new Vector3(0,rotationGoal,0) * Time.deltaTime * rotationSpeed).y;
             if (amountRotated >= rotationGoal){
                 amountRotated = 0;
+                maxDistance = UnityEngine.Random.Range(0.25f,7.0f);
                 rotating = false;
             }
         }
